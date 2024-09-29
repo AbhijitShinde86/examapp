@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-const routes: Routes = [];
+import { NewTestComponent } from './pages/new-test/new-test.component';
+import { TestsComponent } from './pages/tests/tests.component';
+
+const routes: Routes = [
+  { path: '', component: TestsComponent },
+  { path: 'new', component: NewTestComponent },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    HttpClientModule,
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
